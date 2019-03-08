@@ -1,0 +1,10 @@
+type User {
+  auth_id: String!
+  email: String!
+  name: String
+  license_number: String
+}
+
+type Query {
+  user(id: ID!): User
+}
