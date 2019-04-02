@@ -1,8 +1,28 @@
+scalar DateTime
+
 type User {
   auth_id: String!
   email: String!
   name: String
   license_number: String
+  ring_series: [RingSeries]!
+  ring_numbers: [RingNumber]!
+}
+
+type RingNumber {
+  type: String!
+  number: String!
+  allocated_at: DateTime!
+  received_at: DateTime!
+  user: User!
+}
+
+type RingSeries {
+  type: String!
+  size: Int!
+  start_serial: String!
+  end_serial: String!
+  ring_numbers: [RingNumber]!
 }
 
 type Query {
