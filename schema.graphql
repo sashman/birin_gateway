@@ -12,17 +12,17 @@ type User {
 type RingNumber {
   type: String!
   number: String!
-  allocated_at: DateTime!
-  received_at: DateTime!
   user: User!
 }
 
 type RingSeries {
   type: String!
   size: Int!
-  start_serial: String!
-  end_serial: String!
+  start_number: String!
+  end_number: String!
   ring_numbers: [RingNumber]!
+  allocated_at: DateTime!
+  received_at: DateTime!
 }
 
 type Query {

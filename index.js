@@ -12,8 +12,8 @@ const resolvers = {
     user: (_, { id }) => axios.get(`${apiEndpoint}/api/users`).then(({ data }) => data.data),
   },
   User: {
-    ring_series: ({ id }) => [],
-    // axios.get(`${apiEndpoint}/api/ring_series?user_id=${id}`).then(({ data }) => data.data)
+    ring_series: ({ id }) =>
+      axios.get(`${apiEndpoint}/api/ring_series?user_id=${id}`).then(({ data }) => data.data),
     ring_numbers: ({ id }) =>
       axios.get(`${apiEndpoint}/api/ring_numbers?user_id=${id}`).then(({ data }) => data.data)
   }
