@@ -9,7 +9,7 @@ const resolvers = {
   Query: {
     users: () =>
       axios.get(`${apiEndpoint}/api/users`).then(({ data }) => data.data),
-    user: (_, { id }) => axios.get(`${apiEndpoint}/api/users`).then(({ data }) => data.data),
+    user: (_, { id }) => axios.get(`${apiEndpoint}/api/users/${id}`).then(({ data }) => data.data),
   },
   User: {
     ring_series: ({ id }) =>
