@@ -2,7 +2,7 @@ const { GraphQLServer } = require("graphql-yoga")
 const _ = require("lodash")
 const morgan = require("morgan")
 const axios = require("axios")
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4001
 const apiEndpoint = process.env.API_ENDPOINT || "http://localhost:4000"
 
 const resolvers = {
