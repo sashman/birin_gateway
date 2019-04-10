@@ -29,3 +29,14 @@ type Query {
   users: [User]!
   user(id: ID!): User
 }
+
+type Mutation {
+  createUser(data: UserInput!): User!
+}
+
+input UserInput {
+  auth_id: String!
+  email: String!
+  name: String
+  license_number: String
+}

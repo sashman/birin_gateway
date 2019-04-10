@@ -16,8 +16,10 @@ const resolvers = {
       axios.get(`${apiEndpoint}/api/ring_series?user_id=${id}`).then(({ data }) => data.data),
     ring_numbers: ({ id }) =>
       axios.get(`${apiEndpoint}/api/ring_numbers?user_id=${id}`).then(({ data }) => data.data)
+  },
+  Mutation: {
+    createUser: (_, { data }) => axios.post(`${apiEndpoint}/api/users`, { user: data }).then(({ data }) => data.data)
   }
-  // Mutation: {}
 }
 
 const server = new GraphQLServer({
