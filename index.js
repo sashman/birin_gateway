@@ -17,6 +17,10 @@ const resolvers = {
     ring_numbers: ({ id }) =>
       axios.get(`${apiEndpoint}/api/ring_numbers?user_id=${id}`).then(({ data }) => data.data)
   },
+  RingSeries: {
+    ring_numbers: ({ id }) =>
+      axios.get(`${apiEndpoint}/api/ring_numbers?ring_series_id=${id}`).then(({ data }) => data.data)
+  },
   Mutation: {
     createUser: (_, { data }) => axios.post(`${apiEndpoint}/api/users`, { user: data }).then(({ data }) => data.data)
   }
