@@ -26,10 +26,16 @@ type RingSeries {
   received_at: DateTime!
 }
 
+type RingTypeCounts {
+  type: String!
+  total: Int!
+}
+
 type Query {
   users: [User]!
   user(id: ID!): User
   ring_series: [RingSeries]!
+  ring_types: [RingTypeCounts]!
 }
 
 type Mutation {
