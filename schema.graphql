@@ -29,6 +29,7 @@ type RingSeries {
 type Query {
   users: [User]!
   user(id: ID!): User
+  ring_series: [RingSeries]!
 }
 
 type Mutation {
