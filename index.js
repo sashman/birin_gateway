@@ -9,22 +9,38 @@ const resolvers = {
   Query: {
     users: () =>
       axios.get(`${apiEndpoint}/api/users`).then(({ data }) => data.data),
-    user: (_, { id }) => axios.get(`${apiEndpoint}/api/users/${id}`).then(({ data }) => data.data),
-    ring_series: () => axios.get(`${apiEndpoint}/api/ring_series`).then(({ data }) => data.data),
-    ring_types: () => axios.get(`${apiEndpoint}/api/ring_types`).then(({ data }) => data.data),
+    user: (_, { id }) =>
+      axios.get(`${apiEndpoint}/api/users/${id}`).then(({ data }) => data.data),
+    ring_series: () =>
+      axios.get(`${apiEndpoint}/api/ring_series`).then(({ data }) => data.data),
+    ring_types: () =>
+      axios.get(`${apiEndpoint}/api/ring_types`).then(({ data }) => data.data),
+    allocated_ring_types: () =>
+      axios
+        .get(`${apiEndpoint}/api/ring_types/allocated`)
+        .then(({ data }) => data.data)
   },
   User: {
     ring_series: ({ id }) =>
-      axios.get(`${apiEndpoint}/api/ring_series?user_id=${id}`).then(({ data }) => data.data),
+      axios
+        .get(`${apiEndpoint}/api/ring_series?user_id=${id}`)
+        .then(({ data }) => data.data),
     ring_numbers: ({ id }) =>
-      axios.get(`${apiEndpoint}/api/ring_numbers?user_id=${id}`).then(({ data }) => data.data)
+      axios
+        .get(`${apiEndpoint}/api/ring_numbers?user_id=${id}`)
+        .then(({ data }) => data.data)
   },
   RingSeries: {
     ring_numbers: ({ id }) =>
-      axios.get(`${apiEndpoint}/api/ring_numbers?ring_series_id=${id}`).then(({ data }) => data.data)
+      axios
+        .get(`${apiEndpoint}/api/ring_numbers?ring_series_id=${id}`)
+        .then(({ data }) => data.data)
   },
   Mutation: {
-    createUser: (_, { data }) => axios.post(`${apiEndpoint}/api/users`, { user: data }).then(({ data }) => data.data)
+    createUser: (_, { data }) =>
+      axios
+        .post(`${apiEndpoint}/api/users`, { user: data })
+        .then(({ data }) => data.data)
   }
 }
 

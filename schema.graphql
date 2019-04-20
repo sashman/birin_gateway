@@ -36,6 +36,7 @@ type Query {
   user(id: ID!): User
   ring_series: [RingSeries]!
   ring_types: [RingTypeCounts]!
+  allocated_ring_types: [RingTypeCounts]!
 }
 
 type Mutation {
