@@ -14,11 +14,7 @@ const resolvers = {
     ring_series: () =>
       axios.get(`${apiEndpoint}/api/ring_series`).then(({ data }) => data.data),
     ring_types: () =>
-      axios.get(`${apiEndpoint}/api/ring_types`).then(({ data }) => data.data),
-    allocated_ring_types: () =>
-      axios
-        .get(`${apiEndpoint}/api/ring_types/allocated`)
-        .then(({ data }) => data.data)
+      axios.get(`${apiEndpoint}/api/ring_types`).then(({ data }) => data.data)
   },
   User: {
     ring_series: ({ id }) =>
