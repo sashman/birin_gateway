@@ -22,13 +22,14 @@ type RingSeries {
   start_number: String!
   end_number: String!
   ring_numbers: [RingNumber]!
-  allocated_at: DateTime!
+  allocated_at: DateTime
   received_at: DateTime!
 }
 
 type RingTypeCounts {
   type: String!
   total: Int!
+  allocated: Int!
 }
 
 type Query {
@@ -36,7 +37,6 @@ type Query {
   user(id: ID!): User
   ring_series: [RingSeries]!
   ring_types: [RingTypeCounts]!
-  allocated_ring_types: [RingTypeCounts]!
 }
 
 type Mutation {
