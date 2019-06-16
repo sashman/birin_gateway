@@ -21,6 +21,10 @@ const resolvers = {
       axios
         .get(`${apiEndpoint}/api/ring_series?user_id=${id}`)
         .then(({ data }) => data.data),
+    ring_types: ({ id }) =>
+      axios
+        .get(`${apiEndpoint}/api/ring_types?user_id=${id}`)
+        .then(({ data }) => data),
     ring_numbers: ({ id }) =>
       axios
         .get(`${apiEndpoint}/api/ring_numbers?user_id=${id}`)

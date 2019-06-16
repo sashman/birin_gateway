@@ -9,6 +9,7 @@ type User {
   initials: String
   ring_series: [RingSeries]!
   ring_numbers: [RingNumber]!
+  ring_types: UserRingTypeCounts!
 }
 
 type RingNumber {
@@ -25,6 +26,16 @@ type RingSeries {
   ring_numbers: [RingNumber]!
   allocated_at: DateTime
   received_at: DateTime!
+}
+
+type UserRingTypeCounts {
+  data: [AllocatedRingTypeCounts]!
+  total: Int!
+}
+
+type AllocatedRingTypeCounts {
+  type: String!
+  total: Int!
 }
 
 type RingTypeCounts {
