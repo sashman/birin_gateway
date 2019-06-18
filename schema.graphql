@@ -7,7 +7,7 @@ type User {
   name: String
   license_number: String
   initials: String
-  ring_series: [RingSeries]!
+  ring_series(type: String): [RingSeries]!
   ring_numbers: [RingNumber]!
   ring_types: UserRingTypeCounts!
 }

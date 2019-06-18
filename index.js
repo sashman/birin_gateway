@@ -17,10 +17,13 @@ const resolvers = {
       axios.get(`${apiEndpoint}/api/ring_types`).then(({ data }) => data.data)
   },
   User: {
-    ring_series: ({ id }) =>
-      axios
-        .get(`${apiEndpoint}/api/ring_series?user_id=${id}`)
-        .then(({ data }) => data.data),
+    ring_series: ({ id }, { type }) => {
+      const query = type ? `user_id=${id}&type=${type}` : `user_id=${id}`
+
+      return axios
+        .get(`${apiEndpoint}/api/ring_series?${query}`)
+        .then(({ data }) => data.data)
+    },
     ring_types: ({ id }) =>
       axios
         .get(`${apiEndpoint}/api/ring_types?user_id=${id}`)
