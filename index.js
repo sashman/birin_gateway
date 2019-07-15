@@ -18,7 +18,9 @@ const resolvers = {
   },
   User: {
     ring_series: ({ id }, { type }) => {
-      const query = type ? `user_id=${id}&type=${type}` : `user_id=${id}`
+      const query = type
+        ? `user_id=${id}&type=${encodeURIComponent(type)}`
+        : `user_id=${id}`
 
       return axios
         .get(`${apiEndpoint}/api/ring_series?${query}`)
