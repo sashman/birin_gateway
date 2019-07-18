@@ -13,6 +13,10 @@ const resolvers = {
       axios.get(`${apiEndpoint}/api/users/${id}`).then(({ data }) => data.data),
     ring_series: () =>
       axios.get(`${apiEndpoint}/api/ring_series`).then(({ data }) => data.data),
+    ring_number: (_, { number }) =>
+      axios
+        .get(`${apiEndpoint}/api/ring_number?number=${number}`)
+        .then(({ data }) => data.data),
     ring_types: () =>
       axios.get(`${apiEndpoint}/api/ring_types`).then(({ data }) => data.data)
   },
